@@ -1,5 +1,5 @@
-/* font-famil: */
-/* Nanum Gothic */
+/* font-famil: Nanum Gothic */
+
 /* ICONS */
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 700, "GRAD" 0, "opsz" 48;
@@ -12,6 +12,7 @@ body {
   font-weight: 400;
   line-height: 1.4;
   font-family: "Nanum Gothic", sans-serif;
+  height: 3000px;
 }
 
 a {
@@ -21,11 +22,37 @@ a {
 img {
   display: block;
 }
+
 .inner {
   width: 1100px;
-  height: 120px;
   margin: 0 auto;
   position: relative;
+}
+
+.strong {
+  font-weight: 700;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  padding: 6px 20px;
+  border: 2px solid currentcolor;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.btn--light--green {
+  color: #076443;
+  border-color: #076443;
+  transition: 0.6s;
+}
+
+.btn--light--green:hover {
+  background-color: #076443;
+  border-color: black;
+  color: #fff;
+  text-decoration: underline;
 }
 
 /* HEADER */
@@ -37,6 +64,10 @@ header {
   border-top: 2px solid #000;
   border-bottom: 1px solid #eae7e2;
   z-index: 1;
+}
+
+header > .inner {
+  height: 120px;
 }
 
 header .inner .logo {
@@ -61,8 +92,7 @@ header .inner .sub-menu {
 header .inner .sub-menu .sub-menu__menu {
   display: flex;
 }
-header .inner .sub-menu .sub-menu__menu > li {
-}
+
 header .inner .sub-menu .sub-menu__menu > li:not(:first-child)::before {
   content: "";
   display: block;
@@ -85,10 +115,12 @@ header .inner .sub-menu .sub-menu__menu > li > a {
 header .inner .sub-menu .sub-menu__menu > li > a:hover {
   text-decoration: underline;
 }
+
 /* sub-menu search */
 header .inner .sub-menu .search {
   position: relative;
 }
+
 header .inner .sub-menu .search > input {
   width: 36px;
   height: 34px;
@@ -99,9 +131,11 @@ header .inner .sub-menu .search > input {
   outline: none;
   transition: width 0.4s;
 }
+
 header .inner .sub-menu .search > input:focus {
   width: 190px;
 }
+
 header .inner .sub-menu .search > .material-symbols-outlined {
   position: absolute;
   margin: auto;
@@ -125,24 +159,353 @@ header .inner .main-menu .item .item__name {
   font-size: 13px;
 }
 
-header .inner .main-menu .item .item__content {
+header .inner .main-menu .item .item__contents {
   display: none;
   position: fixed;
   left: 0;
   top: 120px;
   width: 100%;
-  height: 100px;
-  background-color: #fc0;
+  /* transform: scaleY(0);
+  transform-origin: center top;
+  transition: 0.5s; */
 }
+
 header .inner .main-menu .item:hover .item__name {
+  /* transform: scale(1); */
   background-color: #2c2a29;
   color: #669900;
   text-decoration: underline;
   cursor: pointer;
 }
-header .inner .main-menu .item:hover .item__content {
+
+header .inner .main-menu .item:hover .item__contents {
   display: block;
   background-color: #2c2a29;
   color: #fff;
+}
+
+header .inner .main-menu .item .item__contents .item__contents__menu {
+  background-color: #2c2a29;
+  padding: 20px 0px;
+}
+
+header > .inner .main-menu .item .item__contents .item__contents__menu .inner {
+  display: flex;
+}
+
+header
+  .inner
+  .main-menu
+  .item
+  .item__contents
+  .item__contents__menu
+  .inner
+  > li {
+  width: 200px;
+  padding-right: 20px;
+}
+
+header
+  .inner
+  .main-menu
+  .item
+  .item__contents
+  .item__contents__menu
+  .inner
+  > li
+  > a {
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 15px;
+}
+
+header
+  .inner
+  .main-menu
+  .item
+  .item__contents
+  .item__contents__menu
+  .inner
+  > li
+  > a:hover {
+  text-decoration: underline;
+}
+
+header
+  .inner
+  .main-menu
+  .item
+  .item__contents
+  .item__contents__menu
+  .inner
+  > li
+  > ul
+  > li {
+  color: #999;
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+header
+  .inner
+  .main-menu
+  .item
+  .item__contents
+  .item__contents__menu
+  .inner
+  > li
+  > ul
+  > li:hover {
   cursor: pointer;
+  text-decoration: underline;
+}
+
+/* BADGES */
+header .badges {
+  position: absolute;
+  top: 150px;
+  left: calc(1100px + (100vw - 1100px) / 2);
+}
+
+header .badges .badge img {
+  width: 140px;
+}
+
+@media screen and (max-width: 1400px) {
+  header .badges {
+    left: calc(100vw - 150px);
+  }
+}
+
+/* VISUAL */
+.visual {
+  display: block;
+  position: relative;
+  margin-top: 120px;
+  background-image: url(../images/visual_bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 34vw;
+}
+.visual .inner {
+  position: relative;
+  height: 646px;
+}
+.visual .inner .slogan {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  justify-content: center;
+  width: 340px;
+  top: 180px;
+  left: -130px;
+}
+.visual .inner .slogan img {
+  width: 100%;
+}
+.visual .inner .slogan .btn {
+  position: absolute;
+  top: 250px;
+}
+.visual .inner img {
+  position: absolute;
+}
+.visual .inner .item-1 {
+  width: 290px;
+  top: 98px;
+  left: 340px;
+}
+.visual .inner .item-2 {
+  width: 310px;
+  top: 196px;
+  left: 538px;
+}
+.visual .inner .item-3 {
+  width: 310px;
+  top: 116px;
+  left: 762px;
+}
+
+/* NOTICE */
+.notice {
+  position: relative;
+}
+.notice .notice-line {
+  position: relative;
+  font-weight: 700;
+}
+.notice .notice-line .bg-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #111;
+}
+.notice .notice-line .bg-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #f6f5ef;
+}
+.notice .notice-line .inner {
+  display: flex;
+  height: 62px;
+}
+.notice .notice-line .inner .inner_left {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 60%;
+  height: 100%;
+  background-color: #111;
+  color: white;
+}
+.notice .notice-line .inner .inner_left h1 {
+  position: absolute;
+  font-size: 16px;
+  left: 0;
+}
+.notice .notice-line .inner .inner_left div {
+  position: absolute;
+  font-size: 14px;
+  left: 80px;
+}
+.notice .notice-line .inner .inner_left a {
+  position: absolute;
+  right: 20px;
+  color: white;
+}
+.notice .notice-line .inner .inner_left a span {
+  font-size: 36px;
+  vertical-align: bottom;
+  /* display: block; */
+}
+.notice .notice-line .inner .inner_right {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  height: 100%;
+  position: relative;
+  background-color: #f6f5e5;
+}
+.notice .notice-line .inner .inner_right h1 {
+  position: absolute;
+  right: 120px;
+  font-size: 16px;
+}
+.notice .notice-line .inner .inner_right a {
+  position: absolute;
+  right: 20px;
+  color: black;
+}
+.notice .notice-line .inner .inner_right a span {
+  font-size: 36px;
+  display: block;
+}
+
+/* REWARDS */
+.rewards {
+  position: relative;
+  background-color: #1e3932;
+}
+.rewards .inner {
+  display: flex;
+  position: relative;
+  padding: 30px 0 40px 0;
+}
+.rewards .inner .rewards__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 260px;
+}
+.rewards .inner .rewards__logo img {
+  display: block;
+  width: 176px;
+}
+.rewards .inner .rewards__items {
+  flex-grow: 1;
+}
+
+.rewards .inner .rewards__items .rewards__items__register {
+  position: relative;
+  padding-bottom: 12px;
+  box-shadow: 0 0.5px #c8c8c8;
+}
+.rewards .inner .rewards__items .rewards__items__register p {
+  display: block;
+  font-size: 17px;
+  color: white;
+}
+.rewards .inner .rewards__items .rewards__items__register .subject {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+.rewards .inner .rewards__items .rewards__items__register .buttons {
+  position: absolute;
+  right: 0;
+  bottom: 12px;
+}
+.rewards
+  .inner
+  .rewards__items
+  .rewards__items__register
+  .buttons
+  .btn--register {
+  background-color: #00704a;
+  border: 1px solid #00704a;
+  color: #fff;
+  margin-right: 6px;
+  font-weight: 700;
+}
+.rewards .inner .rewards__items .rewards__items__register .buttons .btn--login,
+.rewards .inner .rewards__items .rewards__items__card .buttons .btn--login {
+  border: 1px solid #fff;
+  color: #fff;
+  font-weight: 700;
+}
+
+.rewards
+  .inner
+  .rewards__items
+  .rewards__items__register
+  .buttons
+  .btn--register:hover,
+.rewards
+  .inner
+  .rewards__items
+  .rewards__items__register
+  .buttons
+  .btn--login:hover,
+.rewards
+  .inner
+  .rewards__items
+  .rewards__items__card
+  .buttons
+  .btn--login:hover {
+  text-decoration: underline;
+}
+
+.rewards .inner .rewards__items .rewards__items__card {
+  position: relative;
+}
+.rewards .inner .rewards__items .rewards__items__card p {
+  display: block;
+  color: #fff;
+  font-size: 14px;
+  margin-top: 20px;
+}
+.rewards .inner .rewards__items .rewards__items__card .buttons {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.rewards .inner .rewards__items .rewards__items__card .buttons .btn--login {
 }
